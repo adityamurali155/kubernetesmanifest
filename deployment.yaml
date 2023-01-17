@@ -18,7 +18,7 @@ spec:
         app: reactapp
     spec:
       containers:
-      - image: stoneherc/react-app-image:7
+      - image: stoneherc/react-app-image:1
         name: reactapp
         resources: {}
 status: {}
