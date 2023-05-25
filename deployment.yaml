@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: reactapp
   name: reactapp
@@ -13,14 +12,12 @@ spec:
   strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: reactapp
     spec:
       containers:
-      - image: stoneherc/react-app-image:1
+      - image: stoneherc/myapp
         name: reactapp
-        resources: {}
 status: {}
 ---
 apiVersion: v1
@@ -33,6 +30,6 @@ spec:
   type: LoadBalancer
   ports:
   - port: 80
-    targetPort: 5000
+    targetPort: 3000
   selector:
     app: reactapp
