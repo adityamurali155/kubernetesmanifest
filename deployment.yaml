@@ -2,23 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: reactapp
-  name: reactapp
+    app: react-app
+  name: react-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: reactapp
+      app: react-app
   strategy: {}
   template:
     metadata:
       labels:
-        app: reactapp
+        app: react-app
     spec:
       containers:
       - image: stoneherc/myapp
-        name: reactapp
-status: {}
+        name: react-app
 ---
 apiVersion: v1
 kind: Service
@@ -32,4 +31,4 @@ spec:
   - port: 80
     targetPort: 3000
   selector:
-    app: reactapp
+    app: react-app
