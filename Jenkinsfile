@@ -13,7 +13,7 @@ pipeline {
                     sh "git config user.email ${USER_EMAIL}"
                     sh "git config user.name ${USER_NAME}"
                     //sh "git switch master"
-                    sh "sed -i 's+stoneherc/myapp.*+stoneherc/myapp:${DOCKERTAG}+g' deployment.yaml"
+                    sh "sed -i 's+${USER_NAME}/myapp.*+stoneherc/myapp:${DOCKERTAG}+g' deployment.yaml"
                     sh "git add ."
                     sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
                     sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/kubernetesmanifest.git HEAD:main"
