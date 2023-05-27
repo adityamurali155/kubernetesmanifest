@@ -1,6 +1,4 @@
 pipeline {
-    def app
-
     stage('Clone the repository') {
         checkout scm
     }
