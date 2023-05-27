@@ -1,4 +1,4 @@
-pipeline {
+node {
     stage('Clone the repository') {
         checkout scm
     }
