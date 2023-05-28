@@ -16,7 +16,7 @@ spec:
         app: react-app
     spec:
       containers:
-      - image: stoneherc/myapp:5
+      - image: stoneherc/myapp:6
         name: react-app
 ---
 apiVersion: v1
