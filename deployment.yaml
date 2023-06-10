@@ -2,22 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: react-app
-  name: react-app
+    app: node-app
+  name: node-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: react-app
+      app: node-app
   strategy: {}
   template:
     metadata:
       labels:
-        app: react-app
+        app: node-app
     spec:
       containers:
-      - image: stoneherc/myapp:14
-        name: react-app
+        - image: stoneherc/node-chat-app
+          name: node-app
 ---
 apiVersion: v1
 kind: Service
@@ -28,7 +28,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 80
-    targetPort: 3000
+    - port: 80
+      targetPort: 3000
   selector:
-    app: react-app
+    app: node-app
