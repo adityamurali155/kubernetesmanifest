@@ -16,7 +16,7 @@ spec:
         app: node-app
     spec:
       containers:
-        - image: stoneherc/node-chat-app:39975480a9eba6fa0986b3609c120ed77684f663
+        - image: stoneherc/node-chat-app:f09bba90e8372020c01f653156b26f317a1addee
           name: node-app
 ---
 apiVersion: v1
